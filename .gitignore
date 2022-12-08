@@ -7,6 +7,8 @@ db.sqlite3
 media
 #pastas
 aulas
+venv
+
 
 # Backup files #
 *.bak
