@@ -59,7 +59,7 @@ TEMPLATES = [
         'DIRS': [
             # aqui podemos colocar caminhos para templates
             BASE_DIR / 'base_templates',  # por que esta na raiz do progrma
-            BASE_DIR / 'recipes' / 'templates_temp'
+
         ],
         'APP_DIRS': True,
         'OPTIONS': {

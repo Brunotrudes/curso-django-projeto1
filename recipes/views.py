@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+
 from django.shortcuts import render
 
 # Create your views here.
@@ -12,11 +12,3 @@ def home(request):
     # o arquivo automaticamente
     # global/home ou recipes/home
     return render(request, 'recipes/home.html', status=201)
-
-
-def contato(request):
-    return render(request,  'temp.html')
-
-
-def sobre(request):
-    return HttpResponse('SOBRE')
