@@ -11,4 +11,4 @@ def home(request):
     # tem que criar o arquivo hmtl na pasta template que o django vai buscar
     # o arquivo automaticamente
     # global/home ou recipes/home
-    return render(request, 'recipes/home.html', status=201)
+    return render(request, 'recipes/pages/home.html', status=201)
