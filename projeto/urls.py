@@ -26,5 +26,6 @@ from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # o projeto inclui as urls do app recipes para ver urls de categorias, tem que abrir a pasta do app recipes
     path('', include('recipes.urls'))
 ]

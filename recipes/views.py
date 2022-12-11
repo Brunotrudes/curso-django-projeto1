@@ -12,3 +12,10 @@ def home(request):
     # o arquivo automaticamente
     # global/home ou recipes/home
     return render(request, 'recipes/pages/home.html', status=201)
+
+
+def recipe(request, id):
+    return render(request, 'recipes/pages/recipe-view.html', context={
+        'name': 'Bruno Trudes'
+
+    })
