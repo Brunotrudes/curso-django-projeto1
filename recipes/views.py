@@ -1,21 +1,30 @@
 
 from django.shortcuts import render
 
+from utils.recipe.factory import make_recipe
+
 # Create your views here.
 
 
+# def home(request):
+#     # devo ir em projeto depois em settings em INSTALLED APPS e colocar
+#     # uma string com o nome do app criado
+#     # temos que criar uma pasta chamada de templates dentro da pasta do app
+#     # tem que criar o arquivo hmtl na pasta template que o django vai buscar
+#     # o arquivo automaticamente
+#     # global/home ou recipes/home
+#     return render(request, 'recipes/pages/home.html', status=201)
+
 def home(request):
-    # devo ir em projeto depois em settings em INSTALLED APPS e colocar
-    # uma string com o nome do app criado
-    # temos que criar uma pasta chamada de templates dentro da pasta do app
-    # tem que criar o arquivo hmtl na pasta template que o django vai buscar
-    # o arquivo automaticamente
-    # global/home ou recipes/home
-    return render(request, 'recipes/pages/home.html', status=201)
+    return render(request, 'recipes/pages/home.html', context={
+        'name': 'Luiz Otávio',
+        'recipes': [make_recipe() for _ in range(10)],
+    })
 
 
 def recipe(request, id):
     return render(request, 'recipes/pages/recipe-view.html', context={
-        'name': 'Bruno Trudes'
-
+        'name': 'Luiz Otávio',
+        'recipe': make_recipe(),
+        'is_detail_page': True,
     })

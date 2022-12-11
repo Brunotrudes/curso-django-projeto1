@@ -20,11 +20,15 @@ from recipes import views
 # http response
 
 # para criar urls é necessário criar views se nao dara erro
-urlpatterns = [
-    path('', views.home),  # url vazia para apontar para home
-    # url final que aponta para recipe - devo colocar id na request
-    # o int demostra o tipo de url que sera aceita inteiro, string, slug -
-    #   url dinamica
 
-    path('recipes/<int:id>/', views.recipe),
+# cria-se app name para poder colocar nas urls
+# recipes:recipe
+app_name = 'recipes'
+
+urlpatterns = [
+    # url vazia para apontar para home
+    path('', views.home, name="home"),
+    # url final que aponta para recipe - devo colocar id na request
+    # o int demostra o tipo de url que sera aceita inteiro, string, slug -  url
+    path('recipes/<int:id>/', views.recipe, name="recipe"),
 ]
