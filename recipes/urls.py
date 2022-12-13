@@ -30,5 +30,11 @@ urlpatterns = [
     path('', views.home, name="home"),
     # url final que aponta para recipe - devo colocar id na request
     # o int demostra o tipo de url que sera aceita inteiro, string, slug -  url
+    path('recipes/category/<int:category_id>/',
+         # int:category_id
+         views.category, name="category"),
+
     path('recipes/<int:id>/', views.recipe, name="recipe"),
 ]
+
+# name serve para chamar a view em determinadas partes do projeto pelo seu nome
