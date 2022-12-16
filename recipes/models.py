@@ -49,3 +49,46 @@ class Recipe(models.Model):
 # criar usuarios para acessar o admin do django
 # python manage.py createsuperuser
 # cria o super usuario, o usuario que podera fazer tudo
+
+
+class Cliente(models.Model):
+    # nome, sobrenome, cpf, email, fone, endereço, contratos.
+
+    SEXO_CHOICES = (
+        ('M', u'Masculino'),
+        ('F', u'Feminino'),
+    )
+
+    ESTADO_CIVIL_CHOICES = (
+        ('S', u'Solteiro'),
+        ('C', u'Casado'),
+        ('D', u'Divorciado'),
+        ('V', u'Viúvo'),
+    )
+
+    nome = models.CharField(max_length=60)
+    cpf = models.CharField(max_length=11, blank=True, null=True)
+    email = models.EmailField()
+    dtNascimento = models.DateField(
+        blank=True, null=True, verbose_name='Data de nascimento')
+    sexo = models.CharField(max_length=1, choices=SEXO_CHOICES)
+    estado_civil = models.CharField(
+        max_length=1, choices=ESTADO_CIVIL_CHOICES, verbose_name='Estado civil')
+    nrTelCelular = models.CharField(
+        max_length=11, blank=True, null=True, verbose_name='Nº telefone celular')
+    nrTelFixo = models.CharField(
+        max_length=11, blank=True, null=True, verbose_name='Nº telefone fixo')
+
+    def __str__(self):
+        return self.nome
+
+
+#     cliente admin.py
+
+#     class ClienteAdmin(admin.ModelAdmin):
+#     model = Cliente
+#     list_display = ['nome','cpf', 'dtNascimento', 'sexo',
+#                     'estado_civil', 'nrTelCelular', 'nrTelFixo']
+#     list_filter = ['sexo', 'estado_civil']
+#     search_fields = ['nome']
+# admin.site.register(Cliente, ClienteAdmin)

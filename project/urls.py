@@ -1,4 +1,4 @@
-"""projeto URL Configuration
+"""project URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.1/topics/http/urls/
@@ -28,7 +28,7 @@ from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # o projeto inclui as urls do app recipes para ver urls de categorias,
+    # o project inclui as urls do app recipes para ver urls de categorias,
     #  tem que abrir a pasta do app recipes
     path('', include('recipes.urls'))
 ]

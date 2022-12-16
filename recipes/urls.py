@@ -35,6 +35,9 @@ urlpatterns = [
          views.category, name="category"),
 
     path('recipes/<int:id>/', views.recipe, name="recipe"),
+
+    path('contato/', views.contato,  name="contato"),
+    path('sobre/', views.sobre,  name="sobre"),
 ]
 
-# name serve para chamar a view em determinadas partes do projeto pelo seu nome
+# name serve para chamar a view em determinadas partes do project pelo seu nome

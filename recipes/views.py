@@ -1,16 +1,17 @@
 
 # from django.http import HttpResponse
 # from django.http import Http404
-from django.shortcuts import get_list_or_404, render
+from django.shortcuts import get_list_or_404, get_object_or_404, render
 
 from recipes.models import Recipe
-from utils.recipe.factory import make_recipe
+
+# from utils.recipe.factory import make_recipe
 
 # Create your views here.
 
 
 # def home(request):
-#     # devo ir em projeto depois em settings em INSTALLED APPS e colocar
+#     # devo ir em project depois em settings em INSTALLED APPS e colocar
 #     # uma string com o nome do app criado
 #     # temos que criar uma pasta chamada de templates dentro da pasta do app
 #     # tem que criar o arquivo hmtl na pasta template que o django vai buscar
@@ -32,6 +33,22 @@ def home(request):
         # 'name': 'Luiz Otávio',
         # 'recipes': [make_recipe() for _ in range(10)],
         'recipes': recipes,
+    })
+
+
+def contato(request):
+    recipe = Recipe.objects.filter(
+        is_published=True,
+        recipe_id=4
+    )
+    return render(request, 'recipes/pages/contato.html', context={
+        # 'id':recipe,
+    })
+
+
+def sobre(request):
+    return render(request, 'recipes/pages/sobre.html', context={
+
     })
 
 
@@ -68,10 +85,18 @@ def category(request, category_id):
 
 
 def recipe(request, id):
+    # recipe = Recipe.objects.filter(
+    #     # id=id,
+    #     pk=id,
+    #     is_published=True,
+    # ).order_by('-id').first()
+
+    recipe = get_object_or_404(Recipe, pk=id, is_published=True,)
 
     return render(request, 'recipes/pages/recipe-view.html', context={
         # 'name': 'Luiz Otávio',
-        'recipe': make_recipe(),
+        # 'recipe': make_recipe(),
+        'recipe': recipe,
 
         'is_detail_page': True,
     })
