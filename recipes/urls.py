@@ -38,6 +38,9 @@ urlpatterns = [
 
     path('contato/', views.contato,  name="contato"),
     path('sobre/', views.sobre,  name="sobre"),
+    path('clientes/', views.cliente,  name="cliente"),
+    path('cadastro/', views.cadastro,  name="cadastro"),
+
 ]
 
 # name serve para chamar a view em determinadas partes do project pelo seu nome

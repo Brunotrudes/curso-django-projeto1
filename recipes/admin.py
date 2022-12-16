@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Category, Recipe
+from .models import Category, Cliente, Recipe
 
 # Register your models here.
 
@@ -17,3 +17,14 @@ class RecipeAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Category, CategoryAdmin)  # outra maneira de importar
+
+
+class ClienteAdmin(admin.ModelAdmin):
+    model = Cliente
+    list_display = ['nome', 'cpf', 'dtNascimento', 'sexo',
+                    'estado_civil', 'nrTelCelular', 'nrTelFixo']
+    list_filter = ['sexo', 'estado_civil']
+    search_fields = ['nome']
+
+
+admin.site.register(Cliente, ClienteAdmin)

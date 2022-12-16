@@ -3,7 +3,7 @@
 # from django.http import Http404
 from django.shortcuts import get_list_or_404, get_object_or_404, render
 
-from recipes.models import Recipe
+from recipes.models import Cliente, Recipe
 
 # from utils.recipe.factory import make_recipe
 
@@ -49,6 +49,21 @@ def contato(request):
 def sobre(request):
     return render(request, 'recipes/pages/sobre.html', context={
 
+    })
+
+
+def cadastro(request):
+    return render(request, 'recipes/pages/cadastro.html', context={
+    })
+
+
+def cliente(request):
+    clientes = Cliente.objects.filter(
+    ).order_by('-id')
+    return render(request, 'recipes/pages/clientes.html', context={
+        # 'name': 'Luiz Otávio',
+        # 'recipes': [make_recipe() for _ in range(10)],
+        'clientes': clientes,
     })
 
 

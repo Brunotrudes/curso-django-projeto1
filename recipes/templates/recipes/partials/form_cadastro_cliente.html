@@ -1,0 +1,99 @@
+<div class="container">
+    <h1>Informe seus Dados</h1>
+    <hr>
+    <form>
+        <div class="row">
+
+            <div class="col-sm-12 col-md-6">
+                <fieldset class="row">
+                    {% comment %} fildser indica agrupamentos de campos de formularios
+                    classe row indica subdivisoes tanto em formularios quanto container {% endcomment %}
+                    <legend> Dados Pessoais</legend>
+                    <div class="mb-3">
+                        <label for="txtNome" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="txtNome">
+                    </div>
+                    <div class="col-md-6 col-xl-4 mb-3">
+                        <label for="txtNome" class="form-label">CPF</label>
+                        <span class="form-text">(Somente Numeros)</span>
+                        <input type="text" class="form-control" id="txtCPF">
+                    </div>
+                    <div class="col-md-6 col-xl-4 mb-3">
+                        <label for="txtDataNascimento" class="form-label">Data de Nascimento</label>
+                        <input type="date" class="form-control" id="txtDataNascimento">
+                    </div>
+
+                </fieldset>
+                <fieldset>
+                    <legend>Contatos</legend>
+                    <div class="mb-3 col-md-8">
+                        <label for="txtEmail" class="form-label">E-mail</label>
+                        <input type="email" class="form-control" id="txtEmail">
+                    </div>
+                    <div class="mb-3 col-md-6">
+                        <label for="txtTelefone" class="form-label">Telefone</label>
+                        <input type="tel" class="form-control" id="txtTElefone" placeholder="13996581671">
+                        <span class="form-text">(Com DDD, somente números)</span>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <fieldset class="row">
+                    <legend>Endereço</legend>
+                    <div class="mb-3 col-md-6 col-lg-4">
+                        <label for="txtCEP" class="form-label">CEP</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="textCEP">
+                            <span class="input-group-text p-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-hourglass-split" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2.5 15a.5.5 0 1 1 0-1h1v-1a4.5 4.5 0 0 1 2.557-4.06c.29-.139.443-.377.443-.59v-.7c0-.213-.154-.451-.443-.59A4.5 4.5 0 0 1 3.5 3V2h-1a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-1v1a4.5 4.5 0 0 1-2.557 4.06c-.29.139-.443.377-.443.59v.7c0 .213.154.451.443.59A4.5 4.5 0 0 1 12.5 13v1h1a.5.5 0 0 1 0 1h-11zm2-13v1c0 .537.12 1.045.337 1.5h6.326c.216-.455.337-.963.337-1.5V2h-7zm3 6.35c0 .701-.478 1.236-1.011 1.492A3.5 3.5 0 0 0 4.5 13s.866-1.299 3-1.48V8.35zm1 0v3.17c2.134.181 3 1.48 3 1.48a3.5 3.5 0 0 0-1.989-3.158C8.978 9.586 8.5 9.052 8.5 8.351z" />
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mb-3 col-md-6 col-lg-8 align-self-end">
+                        <textarea class="form-control text-muted bg-light " style="height: 68px;" disabled>
+                            Digite o CEP para buscarmos o Endereço</textarea>
+                    </div>
+                    <div class="mb-3 col-md-4">
+                        <label for="txtNumero" class="form-label">Número</label>
+                        <input type="text" class="form-control" id="txtNumero">
+                    </div>
+                    <div class="mb-3 col-md-8">
+                        <label for="txtComplemento" class="form-label">Complemento</label>
+                        <input type="text" class="form-control" id="txtComplemento">
+                    </div>
+                    <div class="mb-3">
+                        <label for="txtReferencia" class="form-label">Referência</label>
+                        <input type="text" class="form-control" id="txtreferencia">
+                    </div>
+                </fieldset class="row">
+                <fieldset>
+                    <legend>Senha de Acesso</legend>
+                    <div class="mb-3">
+                        <label for="txtSenha" class="form-label">Senha</label>
+                        <input type="text" class="form-control" id="txtSenha">
+                    </div>
+                    <div class="mb-3">
+                        <label for="txtConfSenha" class="form-label">Confirmação da Senha</label>
+                        <input type="text" class="form-control" id="txtConfSenha">
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <hr>
+        <div class="form-check mb-3">
+            <input type="checkbox" class="form-check-input" value="" id="chkPromocoes">
+            <label for="chkPromocoes" class="form-check-label"> Desejo receber informações
+                sobre promoções.</label>
+        </div>
+        <div class="mb-3">
+            <a class="btn btn-light btn-outline-danger" href="/index.html">Cancelar</a>
+            <input type="button" value="Criar meu cadastro" class="btn btn-danger"
+                onclick="window.location.href='/confirmarcadastro.html'">
+            <!-- criar pagina para confirmacao de cadastro -->
+        </div>
+    </form>
+</div>
