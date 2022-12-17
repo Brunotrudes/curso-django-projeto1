@@ -1,0 +1,14 @@
+[run]
+branch = True
+
+# coverage
+# aqui vamos ver a porcentagem de testes que fizemos com relacao a processos de nosso sistema
+
+# pip install coverage
+omit = venv/*, **/*test*.py, manage.py, aulas/*
+
+# coverage run manage.py test
+# covrage run -m pytest
+
+# para criar a pasta html
+# coverage html

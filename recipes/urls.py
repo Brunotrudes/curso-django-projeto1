@@ -28,6 +28,8 @@ app_name = 'recipes'
 urlpatterns = [
     # url vazia para apontar para home
     path('', views.home, name="home"),
+    path('recipes/search/', views.search,  name="search"),
+
     # url final que aponta para recipe - devo colocar id na request
     # o int demostra o tipo de url que sera aceita inteiro, string, slug -  url
     path('recipes/category/<int:category_id>/',
