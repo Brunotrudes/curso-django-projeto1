@@ -1,6 +1,7 @@
 
 
 from unittest import skip
+from unittest.mock import patch
 
 from django.urls import resolve, reverse
 
@@ -60,3 +61,21 @@ class RecipehomeViewsTest(RecipeTestBase):
         self.assertIn(
             'No recipes found',
             response.content.decode('utf-8'),)
+
+    @patch('recipes.views.PER_PAGE', new=3)
+    def test_recipe_home_is_paginated(self):
+        import recipes
+        for i in range(24):
+            kwargs = {'slug': f'r{i}', 'author_data': {'username': f'u{i}'}}
+            self.make_recipe(**kwargs)
+    # esse teste testa a quantidade de paginas feitas pelo paginator dependendo
+    # da quantidade de recipes, mas nao esta funcionando corretamente
+
+        recipes.views.PER_PAGE = 3
+        response = self.client.get(reverse('recipes:home'))
+        recipes = response.context['recipes']
+        paginator = recipes.paginator
+
+        self.assertEqual(paginator.num_pages, 8)
+        self.assertEqual(len(paginator.get_page(1)), 3)
+        self.assertEqual(len(paginator.get_page(2)), 3)

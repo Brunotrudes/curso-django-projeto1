@@ -35,7 +35,7 @@ class RecipeCategoryViewTest(RecipeTestBase):
 
     def test_recipe_detail_view_returns_status_404_if_no_recipes_found(self):
         response = self.client.get(
-            reverse('recipes:recipe', kwargs={'id': 1000}))
+            reverse('recipes:recipe', kwargs={'id': 10000}))
         self.assertEqual(response.status_code, 404)
 
     def test_recipe_category_url_is_correct(self):

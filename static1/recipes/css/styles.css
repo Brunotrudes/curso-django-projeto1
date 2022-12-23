@@ -275,3 +275,15 @@ body {
 .main-footer a:hover {
     filter: brightness(.8);
 } 
+
+.pagination-contente{
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1rem 0.5rem;
+}
+
+.pagination page-item{
+text-decoration: None;
+background: var(--color-gray-3);
+padding: 0.5rem 1rem;
+}

@@ -30,7 +30,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # o project inclui as urls do app recipes para ver urls de categorias,
     #  tem que abrir a pasta do app recipes
-    path('', include('recipes.urls'))
+    path('', include('recipes.urls')),
+    path('authors/', include('authors.urls')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
